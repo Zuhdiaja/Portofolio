@@ -1,0 +1,190 @@
+/* =========================================================
+   PROYEK - daftar karya dan tampilan mini aplikasi
+   ========================================================= */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  background: var(--canvas);
+  transition: border-color .25s;
+}
+
+.project-card:hover { border-color: var(--hairline); }
+
+.project-thumb {
+  position: relative;
+  height: 200px;
+  margin: 12px;
+  overflow: hidden;
+  border-radius: var(--r-sm);
+  background: var(--stone);
+}
+
+.project-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 10px 24px 24px;
+}
+
+.project-kicker {
+  margin-bottom: 8px;
+  color: var(--green);
+}
+
+.project-card h2 { font-size: 20px; letter-spacing: -.2px; }
+.project-card > p,
+.project-content > p {
+  margin-top: 8px;
+  color: var(--body);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.project-card .tags { margin-top: 16px; margin-bottom: 18px; }
+.project-card .tag { font-size: 12px; }
+
+.project-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--blue);
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+.project-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.project-link .icon { width: 13px; height: 13px; }
+
+.project-note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 30px;
+  padding: 22px 26px;
+  border-radius: var(--r-sm);
+  background: var(--stone);
+}
+
+.project-note p { color: var(--body); font-size: 13.5px; line-height: 1.65; }
+.project-note strong { color: var(--ink); font-weight: 600; }
+
+/* Mini browser mockups */
+.mock {
+  position: absolute;
+  top: 22px;
+  right: 20px;
+  bottom: -10px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-bottom: 0;
+  border-radius: var(--r-sm) var(--r-sm) 0 0;
+  background: var(--canvas);
+}
+
+.mock-bar {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 4px;
+  height: 20px;
+  padding: 0 9px;
+  border-bottom: 1px solid var(--line);
+  background: var(--canvas);
+}
+
+.mock-bar i { width: 4px; height: 4px; border-radius: 50%; background: var(--hairline); }
+
+.thumb-b { background: var(--pale-green); }
+.thumb-c { background: var(--pale-blue); }
+
+/* Screenshot aplikasi mobile dalam frame ponsel */
+.mock-phone {
+  position: absolute;
+  top: 16px;
+  width: 98px;
+  height: 212px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #0b0b0d;
+}
+
+.mock-phone img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mock-phone--a { left: calc(50% - 106px); }
+.mock-phone--b { left: calc(50% + 8px); }
+
+.project-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.project-topline .project-kicker { margin-bottom: 0; }
+
+/* Screenshot asli di dalam frame browser */
+.mock-shot {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--canvas);
+}
+
+.mock-shot img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+  transition: opacity .45s ease;
+}
+
+.mock-shot .shot-alt { opacity: 0; }
+.project-card:hover .shot-alt,
+.project-card:focus-within .shot-alt { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mock-shot img { transition: none; }
+}
+
+@media (max-width: 1024px) {
+  .project-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 680px) {
+  .project-grid { grid-template-columns: 1fr; gap: 16px; }
+  .project-thumb { height: 185px; }
+  .project-note { display: block; padding: 20px; }
+  .project-note .text-link { margin-top: 10px; }
+}

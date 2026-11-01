@@ -1,0 +1,174 @@
+/* =========================================================
+   BASE - design tokens, reset, tipografi, utilitas dasar
+   Sistem desain mengikuti DESIGN.md (gaya Cohere):
+   kanvas putih editorial, tinta near-black, band hijau tua,
+   aksen coral, permukaan flat dengan garis hairline.
+   ========================================================= */
+:root {
+  /* Tipografi */
+  --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", Arial, ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "CohereMono", "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Brand & aksen */
+  --primary: #17171c;      /* CTA pill, footer, kartu gelap */
+  --black: #000000;
+  --green: #003c33;        /* band produk / fitur */
+  --navy: #071829;
+  --blue: #1863dc;         /* tautan editorial */
+  --coral: #ff7759;        /* taksonomi & aksen hangat */
+  --coral-soft: #ffad9b;
+
+  /* Permukaan */
+  --canvas: #ffffff;
+  --stone: #eeece7;
+  --pale-green: #edfce9;
+  --pale-blue: #f1f5ff;
+
+  /* Garis & teks */
+  --hairline: #d9d9dd;
+  --line: #e5e7eb;
+  --card-line: #f2f2f2;
+  --ink: #212121;
+  --body: #616161;
+  --muted: #93939f;
+  --slate: #75758a;
+  --on-dark: #ffffff;
+
+  /* Semantik */
+  --focus: #4c6ee6;
+  --error: #b30000;
+
+  /* Radius */
+  --r-xs: 4px;
+  --r-sm: 8px;
+  --r-md: 16px;
+  --r-lg: 22px;
+  --r-pill: 32px;
+
+  --container: 1280px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 92px;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--canvas);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -.02em;
+}
+
+h1, h2, h3, h4, p, dl, dd { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+img, svg { display: block; }
+strong { font-weight: 600; }
+
+::selection { background: var(--pale-green); color: var(--ink); }
+
+:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: var(--r-xs);
+}
+
+.container {
+  width: min(var(--container), calc(100% - 64px));
+  margin-inline: auto;
+}
+
+/* Label teknis huruf kapital (mono, tracking longgar) */
+.mono,
+.eyebrow,
+.project-kicker,
+.explore-number,
+.value-number,
+.footer-title,
+.sw-level {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .28px;
+  text-transform: uppercase;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.icon--sm { width: 14px; height: 14px; }
+
+.skip-link {
+  position: fixed;
+  z-index: 999;
+  top: 12px;
+  left: 12px;
+  padding: 10px 18px;
+  border-radius: var(--r-pill);
+  background: var(--primary);
+  color: var(--on-dark);
+  font-size: 13px;
+  font-weight: 500;
+  transform: translateY(-150%);
+  transition: transform .2s;
+}
+
+.skip-link:focus { transform: translateY(0); }
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 3px var(--pale-green);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 680px) {
+  .container { width: calc(100% - 32px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

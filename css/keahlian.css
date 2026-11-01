@@ -1,0 +1,109 @@
+/* =========================================================
+   KEAHLIAN - personal skill dan software skill
+   ========================================================= */
+.skill-block + .skill-block {
+  margin-top: 56px;
+  padding-top: 48px;
+  border-top: 1px solid var(--line);
+}
+
+.soft-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.soft-card {
+  padding: 24px 24px 24px 0;
+  border-top: 1px solid var(--hairline);
+  background: transparent;
+  transition: border-color .25s;
+}
+
+.soft-card:hover { border-color: var(--ink); }
+
+.soft-card .icon-box { margin-bottom: 16px; }
+.soft-card h3 { font-size: 18px; letter-spacing: -.2px; }
+.soft-card p { margin-top: 8px; color: var(--body); font-size: 13.5px; line-height: 1.65; }
+
+.software-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.software-card {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--canvas);
+}
+
+.software-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sw-badge {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: none;
+  place-items: center;
+  border-radius: var(--r-sm);
+  background: var(--stone);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .28px;
+}
+
+.software-name { flex: 1; min-width: 0; }
+.software-name strong { display: block; font-size: 13.5px; font-weight: 600; }
+.software-name small { display: block; margin-top: 2px; color: var(--muted); font-size: 11px; }
+
+.sw-level { color: var(--green); font-size: 11px; }
+
+.skill-meter {
+  height: 4px;
+  margin-top: 15px;
+  overflow: hidden;
+  border-radius: var(--r-pill);
+  background: var(--stone);
+}
+
+.skill-meter span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--green);
+}
+
+.skills-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 38px;
+  padding: 18px 20px;
+  border-radius: var(--r-sm);
+  background: var(--stone);
+  color: var(--body);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.skills-note .icon { margin-top: 2px; color: var(--green); }
+
+@media (max-width: 900px) {
+  .soft-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .software-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 680px) {
+  .skill-block + .skill-block { margin-top: 38px; padding-top: 32px; }
+  .soft-grid { grid-template-columns: 1fr; gap: 0; }
+  .soft-card { padding: 20px 0; }
+  .software-grid { grid-template-columns: 1fr; gap: 12px; }
+  .software-card { padding: 18px; }
+}

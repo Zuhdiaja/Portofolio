@@ -1,0 +1,162 @@
+/* =========================================================
+   COMPONENTS - elemen yang dipakai di banyak halaman
+   ========================================================= */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  background: var(--coral);
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 36px;
+}
+
+.section-title-wrap { max-width: 640px; }
+
+.section-heading h2 {
+  margin-top: 14px;
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -.48px;
+}
+
+.section-desc {
+  max-width: 380px;
+  padding-bottom: 4px;
+  color: var(--body);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Tombol - pill near-black, tanpa bayangan */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border: 1px solid transparent;
+  border-radius: var(--r-pill);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.71;
+  white-space: nowrap;
+  transition: background .2s, border-color .2s, color .2s;
+}
+
+.btn .icon { width: 15px; height: 15px; }
+
+.btn-primary {
+  color: var(--on-dark);
+  background: var(--primary);
+}
+
+.btn-primary:hover { background: var(--black); }
+
+.btn-secondary {
+  color: var(--ink);
+  background: transparent;
+  border-color: var(--hairline);
+}
+
+.btn-secondary:hover { border-color: var(--ink); }
+
+/* Varian tombol di atas band gelap */
+.on-dark .btn-primary,
+.cta-panel .btn-primary {
+  color: var(--primary);
+  background: var(--on-dark);
+}
+
+.on-dark .btn-primary:hover,
+.cta-panel .btn-primary:hover { background: var(--stone); }
+
+.on-dark .btn-secondary,
+.cta-panel .btn-secondary {
+  color: var(--on-dark);
+  border-color: rgba(255, 255, 255, .4);
+}
+
+.on-dark .btn-secondary:hover,
+.cta-panel .btn-secondary:hover { border-color: var(--on-dark); }
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.text-link .icon { width: 14px; height: 14px; }
+
+.icon-box {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--canvas);
+  color: var(--ink);
+}
+
+.icon-box .icon { width: 18px; height: 18px; }
+
+.year-pill {
+  padding: 5px 12px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-pill);
+  color: var(--ink);
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: .28px;
+  white-space: nowrap;
+}
+
+/* Chip taksonomi gaya pill-outline */
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.tag {
+  padding: 5px 12px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-pill);
+  background: transparent;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.social-monogram {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .28px;
+  line-height: 1;
+}
+
+@media (max-width: 900px) {
+  .section-heading { display: block; margin-bottom: 28px; }
+  .section-desc { max-width: 560px; margin-top: 10px; padding: 0; }
+}
+
+@media (max-width: 680px) {
+  .section-heading h2 { font-size: 1.75rem; }
+  .btn { padding: 11px 22px; }
+}

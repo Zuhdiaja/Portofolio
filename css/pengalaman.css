@@ -1,0 +1,108 @@
+/* =========================================================
+   PENGALAMAN - pekerjaan lepas dan peran di kampus
+   ========================================================= */
+.exp-list { display: grid; gap: 20px; }
+
+.exp-item {
+  display: grid;
+  grid-template-columns: 175px minmax(0, 1fr);
+  align-items: start;
+  gap: 30px;
+}
+
+.exp-meta { padding-top: 27px; }
+.exp-meta strong {
+  display: block;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .28px;
+}
+.exp-meta span {
+  display: inline-flex;
+  margin-top: 12px;
+  padding: 5px 12px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-pill);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .28px;
+  text-transform: uppercase;
+}
+
+.exp-card {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--canvas);
+}
+
+.exp-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 15px;
+}
+
+.exp-card h2 { font-size: 19px; letter-spacing: -.2px; }
+.exp-org { margin-top: 4px; color: var(--green); font-size: 13px; font-weight: 500; }
+.exp-card > p { max-width: 780px; margin-top: 10px; color: var(--body); font-size: 14px; line-height: 1.65; }
+
+.exp-points { display: grid; max-width: 780px; gap: 8px; margin-top: 15px; }
+.exp-points li { position: relative; padding-left: 16px; color: var(--body); font-size: 13.5px; line-height: 1.65; }
+.exp-points li::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--coral);
+}
+
+.exp-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.exp-summary {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 28px;
+  margin-top: 36px;
+}
+
+.summary-card {
+  padding: 24px 24px 24px 0;
+  border-top: 1px solid var(--hairline);
+  background: transparent;
+}
+
+.summary-card h3 { font-size: 16px; letter-spacing: -.2px; }
+.summary-card p { margin-top: 8px; color: var(--body); font-size: 13px; line-height: 1.65; }
+.summary-card .tags { margin-top: 15px; }
+.summary-card .tag { padding: 5px 12px; font-size: 12px; }
+
+@media (max-width: 900px) {
+  .exp-item { grid-template-columns: 135px minmax(0, 1fr); gap: 20px; }
+  .exp-summary { grid-template-columns: 1fr; gap: 0; }
+}
+
+@media (max-width: 680px) {
+  .exp-item { grid-template-columns: 1fr; gap: 10px; }
+  .exp-meta { padding: 0; }
+  .exp-meta span { margin-top: 8px; }
+  .exp-card { padding: 22px 20px; }
+  .exp-card h2 { font-size: 17px; }
+  .exp-summary { margin-top: 26px; }
+  .summary-card { padding: 20px 0; }
+}

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Proyek pilihan Muhammad Zuhdi Yudadharma di bidang web development." />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Proyek - Muhammad Zuhdi Yudadharma</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/proyek.css" />
+</head>
+<body id="top">
+
+<a class="skip-link" href="#main">Lewati ke konten</a>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Beranda Muhammad Zuhdi Yudadharma">
+      <span class="brand-mark">ZY</span>
+      <span>zuhdi<span class="brand-dot">.</span>yudadharma</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="primary-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="primary-nav" aria-label="Navigasi utama">
+        <a class="nav-link" href="tentang.html">Tentang</a>
+        <a class="nav-link" href="pendidikan.html">Pendidikan</a>
+        <a class="nav-link" href="keahlian.html">Keahlian</a>
+        <a class="nav-link" href="pengalaman.html">Pengalaman</a>
+        <a class="nav-link active" href="proyek.html" aria-current="page">Proyek</a>
+        <a class="nav-link" href="organisasi.html">Organisasi</a>
+        <a class="nav-link" href="sosial.html">Sosial</a>
+        <a class="nav-link" href="kontak.html">Kontak</a>
+      <a class="nav-cta" href="kontak.html">Mari terhubung <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="page-hero">
+    <div class="container page-hero-grid">
+      <div>
+        <p class="eyebrow">Portofolio / 05</p>
+        <h1>Proyek</h1>
+        <p class="page-desc">Beberapa karya yang saya bangun untuk berlatih dan menyelesaikan masalah nyata.</p>
+      </div>
+      <span class="page-number" aria-hidden="true">05</span>
+    </div>
+  </section>
+  <section class="page-content">
+    <div class="container">
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-thumb" aria-hidden="true">
+            <div class="mock">
+              <div class="mock-bar"><i></i><i></i><i></i></div>
+              <div class="mock-shot">
+                <img class="shot-main" src="assets/lab-ai-home.jpg" alt="" width="1000" height="564" />
+                <img class="shot-alt" src="assets/lab-ai-admin.jpg" alt="" width="1000" height="538" loading="lazy" />
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <p class="project-kicker">Sistem informasi kampus</p>
+            <h2>Portal Lab Applied Informatics</h2>
+            <p>Website publik dan admin panel multi-role untuk Laboratorium Applied Informatics Polinema. Saya mengerjakan fitur Contact Us serta perbaikan CRUD di 10 modul admin.</p>
+            <div class="tags"><span class="tag">PHP</span><span class="tag">PostgreSQL</span><span class="tag">Custom MVC</span></div>
+            <div class="project-links">
+              <a class="project-link" href="https://appliedinformaticspolinema.alwaysdata.net/home" target="_blank" rel="noopener noreferrer">Lihat demo <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+              <a class="project-link" href="https://github.com/rzjuliannofficial/Lab.Applied-Informatics" target="_blank" rel="noopener noreferrer">GitHub <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-thumb thumb-b" aria-hidden="true">
+            <div class="mock">
+              <div class="mock-bar"><i></i><i></i><i></i></div>
+              <div class="mock-shot">
+                <img class="shot-main" src="assets/jti-spot-map.jpg" alt="" width="1000" height="547" />
+                <img class="shot-alt" src="assets/jti-spot-admin.jpg" alt="" width="1000" height="542" loading="lazy" />
+              </div>
+            </div>
+          </div>
+          <div class="project-content">
+            <p class="project-kicker">Aplikasi web kampus</p>
+            <h2>JTI-Spot</h2>
+            <p>Platform pemantauan ketersediaan ruang kelas JTI Polinema secara real-time. Saya mengerjakan modul admin: monitoring ruang, log scan, impor jadwal Excel, dan cetak QR ruang.</p>
+            <div class="tags"><span class="tag">Laravel</span><span class="tag">PostgreSQL</span><span class="tag">Tailwind CSS</span></div>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/Atherizz/jti-spot" target="_blank" rel="noopener noreferrer"> Github <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </div>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-thumb thumb-c" aria-hidden="true">
+            <div class="mock-phone mock-phone--a"><img src="assets/linkguard-home.png" alt="" width="422" height="912" /></div>
+            <div class="mock-phone mock-phone--b"><img src="assets/linkguard-scan.png" alt="" width="422" height="912" loading="lazy" /></div>
+          </div>
+          <div class="project-content">
+            <div class="project-topline">
+              <p class="project-kicker">Aplikasi mobile</p>
+              <span class="year-pill">Dalam pengembangan</span>
+            </div>
+            <h2>LinkGuard</h2>
+            <p>Aplikasi Flutter untuk memeriksa keamanan tautan sebelum diklik: pindai hingga lima URL sekaligus, kode QR, dan riwayat pemeriksaan.</p>
+            <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span></div>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/Zuhdiaja/PBL-MOBILE" target="_blank" rel="noopener noreferrer">Lihat kode <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="project-note">
+        <p><strong>Ingin melihat eksperimen lain?</strong> Beberapa latihan dan kode proyek saya simpan di GitHub.</p>
+        <a class="text-link" href="https://github.com/Zuhdiaja" target="_blank" rel="noopener noreferrer">Kunjungi GitHub <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-main">
+    <div class="footer-brand">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">ZY</span>
+        <span>zuhdi<span class="brand-dot">.</span>yudadharma</span>
+      </a>
+      <p>Mahasiswa D-IV Teknik Informatika di Politeknik Negeri Malang yang belajar membangun pengalaman digital yang sederhana dan bermanfaat.</p>
+    </div>
+    <div>
+      <p class="footer-title">Navigasi</p>
+      <div class="footer-links">
+        <a href="index.html">Beranda</a>
+        <a href="tentang.html">Tentang</a>
+        <a href="pendidikan.html">Pendidikan</a>
+        <a href="keahlian.html">Keahlian</a>
+        <a href="pengalaman.html">Pengalaman</a>
+        <a href="proyek.html">Proyek</a>
+        <a href="organisasi.html">Organisasi</a>
+        <a href="sosial.html">Media sosial</a>
+        <a href="kontak.html">Kontak</a>
+      </div>
+    </div>
+    <div>
+      <p class="footer-title">Terhubung</p>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/muhammad-zuhdi-yudahdarma-a69742446/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><span class="social-monogram">in</span></a>
+        <a href="https://github.com/Zuhdiaja" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><span class="social-monogram">GH</span></a>
+        <a href="https://www.instagram.com/zxdhiy/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span class="social-monogram">IG</span></a>
+        <a href="https://wa.me/6285608797716" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><span class="social-monogram">WA</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span id="year">2026</span> Muhammad Zuhdi Yudadharma. Dibuat dengan HTML dan CSS.</span>
+    <a href="#top">Kembali ke atas ↑</a>
+  </div>
+</footer>
+
+<script src="js/navigation.js"></script>
+
+</body>
+</html>

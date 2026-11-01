@@ -1,0 +1,132 @@
+/* =========================================================
+   PENDIDIKAN - riwayat pendidikan dan fokus studi
+   ========================================================= */
+.edu-timeline { display: grid; gap: 20px; }
+
+.edu-item {
+  display: grid;
+  grid-template-columns: 155px minmax(0, 1fr);
+  align-items: start;
+  gap: 28px;
+}
+
+.edu-year { position: relative; padding: 27px 0 0 24px; }
+.edu-year::before {
+  content: "";
+  position: absolute;
+  top: 33px;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border: 3px solid var(--canvas);
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 1px var(--hairline);
+}
+.edu-year::after {
+  content: "";
+  position: absolute;
+  top: 50px;
+  bottom: -46px;
+  left: 4px;
+  width: 1px;
+  background: var(--line);
+}
+.edu-item:last-child .edu-year::after { display: none; }
+
+.edu-year strong {
+  display: block;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .28px;
+}
+.edu-year span { display: block; margin-top: 4px; color: var(--muted); font-size: 12px; }
+
+.edu-card {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--canvas);
+}
+
+.edu-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.edu-card h2 { font-size: 20px; letter-spacing: -.2px; }
+.edu-place { margin-top: 4px; color: var(--green); font-size: 13.5px; font-weight: 500; }
+.edu-card > p { max-width: 760px; margin-top: 10px; color: var(--body); font-size: 14px; line-height: 1.65; }
+
+.edu-points { display: grid; max-width: 760px; gap: 8px; margin-top: 16px; }
+.edu-points li { position: relative; padding-left: 16px; color: var(--body); font-size: 13.5px; line-height: 1.6; }
+.edu-points li::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--coral);
+}
+
+.edu-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.edu-meta span {
+  padding: 5px 12px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-pill);
+  background: transparent;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.edu-extra {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.edu-info-card {
+  padding: 26px;
+  border-top: 1px solid var(--hairline);
+  background: transparent;
+}
+
+.edu-info-card .icon-box { margin-bottom: 16px; }
+.edu-info-card h3 { font-size: 17px; letter-spacing: -.2px; }
+.edu-info-card > p { margin-top: 8px; color: var(--body); font-size: 13.5px; line-height: 1.65; }
+.edu-info-card .tags { margin-top: 16px; }
+.edu-info-card .tag { padding: 5px 12px; font-size: 12px; }
+
+@media (max-width: 900px) {
+  .edu-item { grid-template-columns: 125px minmax(0, 1fr); gap: 18px; }
+  .edu-year { padding-left: 20px; }
+  .edu-year::after { bottom: -38px; }
+}
+
+@media (max-width: 680px) {
+  .edu-timeline { gap: 14px; }
+  .edu-item { grid-template-columns: 1fr; gap: 10px; }
+  .edu-year { padding: 0 0 0 18px; }
+  .edu-year::before { top: 6px; }
+  .edu-year::after { display: none; }
+  .edu-card { padding: 22px 20px; }
+  .edu-card h2 { font-size: 18px; }
+  .edu-extra { grid-template-columns: 1fr; gap: 0; margin-top: 26px; }
+  .edu-info-card { padding: 22px 0; }
+}

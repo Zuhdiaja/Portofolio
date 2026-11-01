@@ -1,0 +1,78 @@
+/* =========================================================
+   ORGANISASI - peran dan pengalaman berorganisasi
+   ========================================================= */
+.org-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.org-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  background: var(--canvas);
+}
+
+.org-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.org-card h2 { font-size: 19px; letter-spacing: -.2px; }
+.org-role { margin-top: 4px; color: var(--green); font-size: 13px; font-weight: 500; }
+.org-card > p { max-width: 520px; margin-top: 12px; color: var(--body); font-size: 14px; line-height: 1.65; }
+
+.org-points { display: grid; max-width: 520px; gap: 8px; margin-top: 14px; }
+.org-points li { position: relative; padding-left: 16px; color: var(--body); font-size: 13px; line-height: 1.65; }
+.org-points li::before {
+  content: "";
+  position: absolute;
+  top: 9px;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--coral);
+}
+
+.org-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.org-tags .tag { padding: 5px 12px; font-size: 12px; }
+
+.org-note {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: 32px;
+  margin-top: 32px;
+  padding: 30px;
+  border-radius: var(--r-sm);
+  background: var(--stone);
+}
+
+.org-note h2 { font-size: 20px; letter-spacing: -.2px; }
+.org-note p { color: var(--body); font-size: 14px; line-height: 1.7; }
+
+@media (max-width: 900px) {
+  .org-grid { gap: 16px; }
+  .org-note { grid-template-columns: 1fr; gap: 10px; }
+}
+
+@media (max-width: 680px) {
+  .org-grid { grid-template-columns: 1fr; gap: 14px; }
+  .org-card { padding: 22px 20px; }
+  .org-card h2 { font-size: 17px; }
+  .org-note { margin-top: 22px; padding: 24px 20px; }
+}
