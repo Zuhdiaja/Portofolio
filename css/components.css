@@ -1,18 +1,21 @@
 /* =========================================================
    COMPONENTS - elemen yang dipakai di banyak halaman
+   Bahasa Atlassian: eyebrow badge pale-blue, kartu hairline
+   radius 20px, pill 10000px, icon tile sirkular.
    ========================================================= */
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  color: var(--ink);
-}
-
-.eyebrow::before {
-  content: "";
-  width: 22px;
-  height: 2px;
-  background: var(--coral);
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  background: var(--pale-green);
+  color: var(--primary);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .3px;
+  text-transform: uppercase;
 }
 
 .section-heading {
@@ -20,16 +23,16 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 40px;
-  margin-bottom: 36px;
+  margin-bottom: 40px;
 }
 
 .section-title-wrap { max-width: 640px; }
 
 .section-heading h2 {
-  margin-top: 14px;
-  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  margin-top: 16px;
+  font-size: clamp(1.9rem, 3.4vw, 2.75rem);
   font-weight: 500;
-  line-height: 1.15;
+  line-height: 1.12;
   letter-spacing: -.48px;
 }
 
@@ -41,26 +44,30 @@
   line-height: 1.6;
 }
 
-/* Tombol - pill near-black, tanpa bayangan */
+/* Tombol - pill Atlassian Blue, feedback press halus */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 26px;
+  padding: 13px 26px;
   border: 1px solid transparent;
   border-radius: var(--r-pill);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
-  line-height: 1.71;
+  line-height: 1.6;
   white-space: nowrap;
-  transition: background .2s, border-color .2s, color .2s;
+  transition: background .2s, border-color .2s, color .2s, transform .15s;
 }
 
-.btn .icon { width: 15px; height: 15px; }
+.btn:active { transform: scale(.97); }
+
+.btn .icon { width: 15px; height: 15px; transition: transform .2s; }
+
+.btn:hover .icon { transform: translate(2px, -2px); }
 
 .btn-primary {
-  color: var(--on-dark);
+  color: var(--on-primary);
   background: var(--primary);
 }
 
@@ -68,25 +75,26 @@
 
 .btn-secondary {
   color: var(--ink);
-  background: transparent;
+  background: var(--canvas);
   border-color: var(--hairline);
 }
 
-.btn-secondary:hover { border-color: var(--ink); }
+.btn-secondary:hover { border-color: var(--primary); color: var(--primary); }
 
 /* Varian tombol di atas band gelap */
 .on-dark .btn-primary,
 .cta-panel .btn-primary {
-  color: var(--primary);
+  color: #101214;
   background: var(--on-dark);
 }
 
 .on-dark .btn-primary:hover,
-.cta-panel .btn-primary:hover { background: var(--stone); }
+.cta-panel .btn-primary:hover { background: #e9f2fe; }
 
 .on-dark .btn-secondary,
 .cta-panel .btn-secondary {
   color: var(--on-dark);
+  background: transparent;
   border-color: rgba(255, 255, 255, .4);
 }
 
@@ -103,51 +111,62 @@
 }
 
 .text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
-.text-link .icon { width: 14px; height: 14px; }
+.text-link .icon { width: 14px; height: 14px; transition: transform .2s; }
+.text-link:hover .icon { transform: translateX(3px); }
 
+/* Icon tile sirkular dengan tint brand */
 .icon-box {
   display: grid;
   width: 40px;
   height: 40px;
   flex: none;
   place-items: center;
-  border: 1px solid var(--line);
-  border-radius: var(--r-sm);
-  background: var(--canvas);
-  color: var(--ink);
+  border: 1px solid transparent;
+  border-radius: 100%;
+  background: var(--pale-green);
+  color: var(--primary);
 }
 
 .icon-box .icon { width: 18px; height: 18px; }
 
 .year-pill {
   padding: 5px 12px;
-  border: 1px solid var(--hairline);
+  border: 1px solid transparent;
   border-radius: var(--r-pill);
-  color: var(--ink);
-  background: transparent;
-  font-family: var(--font-mono);
+  color: var(--primary);
+  background: var(--pale-green);
+  font-family: var(--font-body);
   font-size: 12px;
-  letter-spacing: .28px;
+  font-weight: 500;
+  letter-spacing: .3px;
   white-space: nowrap;
 }
 
-/* Chip taksonomi gaya pill-outline */
+/* Chip taksonomi pill outline */
 .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 
 .tag {
   padding: 5px 12px;
-  border: 1px solid var(--hairline);
+  border: 1px solid var(--line);
   border-radius: var(--r-pill);
   background: transparent;
-  color: var(--ink);
+  color: var(--body);
   font-size: 12px;
   font-weight: 500;
+  transition: border-color .2s, color .2s, background .2s;
+}
+
+.tag:hover {
+  border-color: var(--primary);
+  background: var(--pale-green);
+  color: var(--primary);
 }
 
 .social-monogram {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 11px;
-  letter-spacing: .28px;
+  font-weight: 600;
+  letter-spacing: .3px;
   line-height: 1;
 }
 

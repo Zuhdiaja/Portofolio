@@ -71,11 +71,12 @@ PortoWeb/
 ## Catatan
 
 - Foto profil utama ada di `assets/foto-zuhdi.jpg` dan dipakai di beranda. Foto kecil untuk halaman tentang ada di `assets/foto-zuhdi-avatar.jpg`.
-- Bagian pengalaman dan organisasi masih berisi contoh. Ketiga kartu proyek sudah memakai proyek nyata: Lab Applied Informatics (deploy aktif), JTI-Spot (deploy mati, hanya link GitHub), dan LinkGuard (masih dalam pengembangan, hanya link GitHub).
+- Bagian pengalaman dan organisasi sudah memakai data nyata: Wamen Mendagri BEM Polinema, proyek perkuliahan (LAB-AI, JTI-Spot, LinkGuard), magang Prakerin di PT Aksamedia Mulia Digital, serta peran PKKMB Prastudi 2025 dan 2026.
+- Tombol "Unduh CV" di hero beranda masih memakai `href="#"` sementara - ganti dengan link Google Drive CV (cari komentar `TODO` di `index.html`).
 - JTI-Spot dan LinkGuard tidak punya link demo; kartunya memakai tombol "Lihat kode" dan, untuk LinkGuard, pill status "Dalam pengembangan".
 - Repo LinkGuard (`Zuhdiaja/PBL-MOBILE`) masih private/404 saat portofolio ini disusun - jadikan public sebelum dipublikasikan.
 - Data akademik mengikuti profil Muhammad Zuhdi Yudadharma: D-IV Teknik Informatika, Politeknik Negeri Malang, angkatan 2024.
-- Email: `zuhdiyuda@gmail.com`.
+- Email: `yudazuhdi21@gmail.com`.
 - Tautan LinkedIn, GitHub, Instagram, dan WhatsApp sudah memakai akun/nomor asli.
 - Letakkan file CV bernama `cv.pdf` di folder utama jika ingin menautkannya.
 - Jika header atau footer diubah, lakukan perubahan yang sama di setiap file HTML.

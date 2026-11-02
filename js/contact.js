@@ -25,6 +25,6 @@ if (contactForm) {
       formNote.textContent = 'Membuka aplikasi email kamu...';
     }
 
-    window.location.href = 'mailto:zuhdiyuda@gmail.com?subject=' + subject + '&body=' + body;
+    window.location.href = 'mailto:yudazuhdi21@gmail.com?subject=' + subject + '&body=' + body;
   });
 }

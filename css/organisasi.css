@@ -1,5 +1,6 @@
 /* =========================================================
    ORGANISASI - peran dan pengalaman berorganisasi
+   Kartu 20px hover lift; note jadi band navy brand-boldest.
    ========================================================= */
 .org-grid {
   display: grid;
@@ -10,10 +11,17 @@
 .org-card {
   display: flex;
   flex-direction: column;
-  padding: 28px;
+  padding: 32px;
   border: 1px solid var(--line);
-  border-radius: var(--r-sm);
+  border-radius: var(--r-md);
   background: var(--canvas);
+  transition: border-color .25s, transform .25s cubic-bezier(.2, .7, .2, 1), box-shadow .25s;
+}
+
+.org-card:hover {
+  border-color: var(--hairline);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(16, 18, 20, .06);
 }
 
 .org-top {
@@ -24,8 +32,8 @@
   margin-bottom: 18px;
 }
 
-.org-card h2 { font-size: 19px; letter-spacing: -.2px; }
-.org-role { margin-top: 4px; color: var(--green); font-size: 13px; font-weight: 500; }
+.org-card h2 { font-size: 19px; font-weight: 600; letter-spacing: -.2px; }
+.org-role { margin-top: 4px; color: var(--body); font-size: 13px; font-weight: 500; }
 .org-card > p { max-width: 520px; margin-top: 12px; color: var(--body); font-size: 14px; line-height: 1.65; }
 
 .org-points { display: grid; max-width: 520px; gap: 8px; margin-top: 14px; }
@@ -38,7 +46,7 @@
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: var(--coral);
+  background: var(--primary);
 }
 
 .org-tags {
@@ -51,28 +59,30 @@
 }
 .org-tags .tag { padding: 5px 12px; font-size: 12px; }
 
+/* Band navy - momen gelap tunggal di halaman ini */
 .org-note {
   display: grid;
   grid-template-columns: .9fr 1.1fr;
   align-items: center;
   gap: 32px;
-  margin-top: 32px;
-  padding: 30px;
-  border-radius: var(--r-sm);
-  background: var(--stone);
+  margin-top: 36px;
+  padding: 40px;
+  border-radius: var(--r-md);
+  background: var(--green);
+  color: var(--on-dark);
 }
 
-.org-note h2 { font-size: 20px; letter-spacing: -.2px; }
-.org-note p { color: var(--body); font-size: 14px; line-height: 1.7; }
+.org-note h2 { color: var(--on-dark); font-size: 20px; font-weight: 600; letter-spacing: -.2px; }
+.org-note p { color: rgba(255, 255, 255, .75); font-size: 14px; line-height: 1.7; }
 
 @media (max-width: 900px) {
   .org-grid { gap: 16px; }
-  .org-note { grid-template-columns: 1fr; gap: 10px; }
+  .org-note { grid-template-columns: 1fr; gap: 10px; padding: 32px; }
 }
 
 @media (max-width: 680px) {
   .org-grid { grid-template-columns: 1fr; gap: 14px; }
-  .org-card { padding: 22px 20px; }
+  .org-card { padding: 24px 20px; }
   .org-card h2 { font-size: 17px; }
-  .org-note { margin-top: 22px; padding: 24px 20px; }
+  .org-note { margin-top: 24px; padding: 26px 22px; }
 }

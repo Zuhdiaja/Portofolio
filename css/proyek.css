@@ -1,5 +1,6 @@
 /* =========================================================
    PROYEK - daftar karya dan tampilan mini aplikasi
+   Kartu produk 20px dengan hover lift + crossfade screenshot.
    ========================================================= */
 .project-grid {
   display: grid;
@@ -14,10 +15,14 @@
   border: 1px solid var(--line);
   border-radius: var(--r-lg);
   background: var(--canvas);
-  transition: border-color .25s;
+  transition: border-color .25s, transform .25s cubic-bezier(.2, .7, .2, 1), box-shadow .25s;
 }
 
-.project-card:hover { border-color: var(--hairline); }
+.project-card:hover {
+  border-color: var(--hairline);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(16, 18, 20, .08);
+}
 
 .project-thumb {
   position: relative;
@@ -37,10 +42,10 @@
 
 .project-kicker {
   margin-bottom: 8px;
-  color: var(--green);
+  color: var(--primary);
 }
 
-.project-card h2 { font-size: 20px; letter-spacing: -.2px; }
+.project-card h2 { font-size: 20px; font-weight: 600; letter-spacing: -.2px; }
 .project-card > p,
 .project-content > p {
   margin-top: 8px;
@@ -71,16 +76,17 @@
 }
 
 .project-link:hover { text-decoration: underline; text-underline-offset: 4px; }
-.project-link .icon { width: 13px; height: 13px; }
+.project-link .icon { width: 13px; height: 13px; transition: transform .2s; }
+.project-link:hover .icon { transform: translate(2px, -2px); }
 
 .project-note {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  margin-top: 30px;
-  padding: 22px 26px;
-  border-radius: var(--r-sm);
+  margin-top: 32px;
+  padding: 24px 28px;
+  border-radius: var(--r-md);
   background: var(--stone);
 }
 
@@ -101,7 +107,10 @@
   border-bottom: 0;
   border-radius: var(--r-sm) var(--r-sm) 0 0;
   background: var(--canvas);
+  transition: transform .45s cubic-bezier(.2, .7, .2, 1);
 }
+
+.project-card:hover .mock { transform: translateY(-6px); }
 
 .mock-bar {
   display: flex;
@@ -127,9 +136,13 @@
   height: 212px;
   overflow: hidden;
   border: 1px solid var(--line);
-  border-radius: 14px;
-  background: #0b0b0d;
+  border-radius: 10px;
+  background: #101214;
+  transition: transform .45s cubic-bezier(.2, .7, .2, 1);
 }
+
+.project-card:hover .mock-phone--a { transform: translateY(-6px) rotate(-2deg); }
+.project-card:hover .mock-phone--b { transform: translateY(-6px) rotate(2deg); }
 
 .mock-phone img {
   display: block;
@@ -175,7 +188,9 @@
 .project-card:focus-within .shot-alt { opacity: 1; }
 
 @media (prefers-reduced-motion: reduce) {
-  .mock-shot img { transition: none; }
+  .mock-shot img,
+  .mock,
+  .mock-phone { transition: none; }
 }
 
 @media (max-width: 1024px) {

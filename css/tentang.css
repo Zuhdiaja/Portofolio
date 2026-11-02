@@ -1,5 +1,6 @@
 /* =========================================================
    TENTANG - cerita diri, nilai kerja, dan profil singkat
+   Kartu produk hairline 20px, tile nilai dengan hover lift.
    ========================================================= */
 .about-layout {
   display: grid;
@@ -9,10 +10,10 @@
 }
 
 .about-main h2 {
-  margin-top: 14px;
+  margin-top: 16px;
   max-width: 610px;
   font-size: clamp(1.9rem, 3.2vw, 2.6rem);
-  line-height: 1.15;
+  line-height: 1.12;
   letter-spacing: -.48px;
 }
 
@@ -20,7 +21,7 @@
   max-width: 700px;
   margin-top: 18px;
   color: var(--body);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.75;
 }
 
@@ -30,9 +31,9 @@
   display: flex;
   max-width: 700px;
   gap: 16px;
-  margin-top: 30px;
-  padding: 20px 22px;
-  border-radius: var(--r-sm);
+  margin-top: 32px;
+  padding: 24px;
+  border-radius: var(--r-md);
   background: var(--stone);
 }
 
@@ -42,30 +43,31 @@
   height: 34px;
   flex: none;
   place-items: center;
-  border-radius: var(--r-sm);
+  border-radius: 100%;
   background: var(--canvas);
-  color: var(--green);
+  color: var(--primary);
 }
 
 .about-note-icon .icon { width: 15px; height: 15px; }
 .about-note strong { display: block; margin-bottom: 5px; font-size: 13.5px; font-weight: 600; }
 .about-note p { color: var(--body); font-size: 13px; line-height: 1.65; }
 
-.interests { margin-top: 28px; }
+.interests { margin-top: 32px; }
 .interests-label {
   margin-bottom: 10px;
   color: var(--muted);
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 12px;
-  letter-spacing: .28px;
+  font-weight: 500;
+  letter-spacing: .3px;
   text-transform: uppercase;
 }
 
 .about-main .tags .tag { padding: 6px 13px; font-size: 12px; }
 
-.values { margin-top: 52px; }
+.values { margin-top: 56px; }
 .values-heading {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -.2px;
@@ -74,24 +76,32 @@
 .values-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 24px;
 }
 
 .value-card {
-  padding: 22px 24px 22px 0;
-  border-top: 1px solid var(--hairline);
-  background: transparent;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  background: var(--canvas);
+  transition: border-color .25s, transform .25s cubic-bezier(.2, .7, .2, 1), box-shadow .25s;
 }
 
-.value-number { color: var(--muted); }
+.value-card:hover {
+  border-color: var(--hairline);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(16, 18, 20, .06);
+}
 
-.value-card h3 { margin-top: 14px; font-size: 17px; letter-spacing: -.2px; }
+.value-number { color: var(--primary); }
+
+.value-card h3 { margin-top: 14px; font-size: 17px; font-weight: 600; letter-spacing: -.2px; }
 .value-card p { margin-top: 7px; color: var(--body); font-size: 13px; line-height: 1.65; }
 
 .profile-card {
-  padding: 26px;
+  padding: 32px;
   border: 1px solid var(--line);
-  border-radius: var(--r-sm);
+  border-radius: var(--r-md);
   background: var(--canvas);
 }
 
@@ -105,12 +115,13 @@
 
 .profile-avatar {
   display: grid;
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   flex: none;
   place-items: center;
   border-radius: 50%;
   object-fit: cover;
+  box-shadow: 0 0 0 1px var(--line), 0 8px 20px rgba(16, 18, 20, .08);
 }
 
 .profile-top strong { display: block; font-size: 14.5px; font-weight: 600; letter-spacing: -.2px; }
@@ -138,7 +149,7 @@
   margin-top: 18px;
   padding-top: 16px;
   border-top: 1px solid var(--line);
-  color: var(--green);
+  color: var(--success);
   font-size: 12.5px;
   font-weight: 500;
 }
@@ -152,12 +163,12 @@
 @media (max-width: 900px) {
   .about-layout { grid-template-columns: 1fr; gap: 32px; }
   .profile-card { max-width: 560px; }
-  .values-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .values-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .value-card { padding: 22px; }
 }
 
 @media (max-width: 680px) {
   .about-main > p { font-size: 14px; }
-  .values-grid { grid-template-columns: 1fr; gap: 0; }
-  .value-card { padding: 18px 0; }
-  .profile-card { padding: 22px; }
+  .values-grid { grid-template-columns: 1fr; gap: 14px; }
+  .profile-card { padding: 24px; }
 }

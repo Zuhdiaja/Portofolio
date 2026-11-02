@@ -1,5 +1,6 @@
 /* =========================================================
-   HOME - profil, perkenalan, dan pintasan fitur
+   HOME - layout asli: hero dua kolom, potret kanan dengan
+   float card, explore kartu garis atas, panel CTA membulat.
    ========================================================= */
 .hero {
   position: relative;
@@ -18,13 +19,16 @@
   padding: 72px 0 84px;
 }
 
-.hero-copy { animation: rise .65s cubic-bezier(.2, .7, .2, 1) both; }
-.hero-visual { animation: rise .7s .1s cubic-bezier(.2, .7, .2, 1) both; }
+/* Entrance bertahap untuk tiap lapis copy hero */
+.hero-copy > * { animation: atl-rise .7s cubic-bezier(.2, .7, .2, 1) both; }
+.hero-copy > *:nth-child(1) { animation-delay: .05s; }
+.hero-copy > *:nth-child(2) { animation-delay: .12s; }
+.hero-copy > *:nth-child(3) { animation-delay: .2s; }
+.hero-copy > *:nth-child(4) { animation-delay: .28s; }
+.hero-copy > *:nth-child(5) { animation-delay: .36s; }
+.hero-copy > *:nth-child(6) { animation-delay: .44s; }
 
-@keyframes rise {
-  from { opacity: 0; transform: translateY(14px); }
-  to { opacity: 1; transform: none; }
-}
+.hero-visual { animation: atl-rise .8s .3s cubic-bezier(.2, .7, .2, 1) both; }
 
 .hero-eyebrow {
   display: inline-flex;
@@ -43,12 +47,12 @@
   max-width: 640px;
   margin-top: 24px;
   font-size: clamp(2.75rem, 5.4vw, 4.5rem);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.02;
   letter-spacing: -1.6px;
 }
 
-.hero h1 span { color: var(--green); }
+.hero h1 span { color: var(--display-accent); }
 
 .hero-role {
   display: flex;
@@ -95,7 +99,7 @@
 }
 
 .hero-meta span { display: inline-flex; align-items: center; gap: 8px; }
-.hero-meta .icon { width: 15px; height: 15px; color: var(--green); }
+.hero-meta .icon { width: 15px; height: 15px; color: var(--display-accent); }
 
 .hero-visual {
   position: relative;
@@ -111,9 +115,9 @@
   left: 4%;
   width: 90%;
   aspect-ratio: 1;
-  background-image: radial-gradient(rgba(23, 23, 28, .16) 1px, transparent 1px);
+  background-image: radial-gradient(var(--dot) 1px, transparent 1px);
   background-size: 16px 16px;
-  opacity: .45;
+  opacity: .5;
   mask-image: radial-gradient(circle, #000 0%, transparent 68%);
   -webkit-mask-image: radial-gradient(circle, #000 0%, transparent 68%);
 }
@@ -144,10 +148,10 @@
   place-items: center;
   border-radius: 50%;
   color: var(--on-dark);
-  background: var(--green);
+  background: var(--band);
   font-family: var(--font-display);
   font-size: clamp(3.2rem, 7vw, 4.7rem);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -.04em;
 }
 
@@ -160,7 +164,10 @@
   object-fit: cover;
   object-position: center 18%;
   border-radius: var(--r-lg);
+  transition: transform .6s cubic-bezier(.2, .7, .2, 1);
 }
+
+.portrait:hover .portrait-img { transform: scale(1.03); }
 
 .float-card {
   position: absolute;
@@ -172,7 +179,11 @@
   border: 1px solid var(--line);
   border-radius: var(--r-sm);
   background: var(--canvas);
+  box-shadow: 0 12px 32px var(--shadow-float);
+  transition: transform .3s cubic-bezier(.2, .7, .2, 1);
 }
+
+.float-card:hover { transform: translateY(-3px); }
 
 .float-card--top { top: 26px; left: -34px; }
 .float-card--bottom { right: -32px; bottom: 30px; }
@@ -183,9 +194,9 @@
   height: 32px;
   flex: none;
   place-items: center;
-  border-radius: var(--r-sm);
+  border-radius: 100%;
   background: var(--pale-green);
-  color: var(--green);
+  color: var(--primary);
 }
 
 .float-icon .icon { width: 16px; height: 16px; }
@@ -230,7 +241,7 @@
   margin-top: 24px;
 }
 
-/* Pintasan fitur - kartu capability dengan garis atas */
+/* Pintasan fitur - kartu garis atas seperti layout asli */
 .home-explore {
   padding: 80px 0 84px;
   border-block: 1px solid var(--line);
@@ -252,13 +263,14 @@
   transition: border-color .25s;
 }
 
-.explore-card:hover { border-color: var(--ink); }
+.explore-card:hover { border-color: var(--primary); }
 
 .explore-number { color: var(--muted); }
 
 .explore-card h3 {
   margin-top: 18px;
   font-size: 20px;
+  font-weight: 600;
   letter-spacing: -.2px;
 }
 
@@ -280,9 +292,10 @@
   font-weight: 500;
 }
 
-.explore-arrow .icon { width: 13px; height: 13px; }
+.explore-arrow .icon { width: 13px; height: 13px; transition: transform .2s; }
+.explore-card:hover .explore-arrow .icon { transform: translate(2px, -2px); }
 
-/* CTA - band hijau tua */
+/* CTA - panel membulat dengan band navy */
 .home-cta { padding: 80px 0 96px; }
 
 .cta-panel {
@@ -294,13 +307,16 @@
   overflow: hidden;
   padding: 64px;
   border-radius: var(--r-lg);
-  background: var(--green);
+  background: var(--band);
   color: var(--on-dark);
 }
 
 .cta-panel > * { position: relative; z-index: 1; }
 
-.cta-panel .eyebrow { color: var(--on-dark); }
+.cta-panel .eyebrow {
+  background: rgba(255, 255, 255, .12);
+  color: var(--on-dark);
+}
 
 .cta-panel h2 {
   margin-top: 14px;
