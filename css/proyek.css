@@ -125,6 +125,9 @@
 
 .mock-bar i { width: 4px; height: 4px; border-radius: 50%; background: var(--hairline); }
 
+/* Nama file di bar jendela hanya dipakai skin retro */
+.mock-name { display: none; }
+
 .thumb-b { background: var(--pale-green); }
 .thumb-c { background: var(--pale-blue); }
 

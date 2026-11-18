@@ -1,22 +1,33 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" data-skin="retro">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Tentang Muhammad Zuhdi Yudadharma: latar belakang, minat, dan cara bekerja." />
-  <meta name="theme-color" content="#ffffff" />
-  <script>document.documentElement.setAttribute("data-theme", (function () { try { return localStorage.getItem("theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); } catch (e) { return "light"; } })());</script>
+  <meta name="theme-color" content="#fdfaf5" />
+  <script>/* Skin retro hanya punya tema terang: lewati penerapan tema gelap
+     agar tidak ada kedipan sebelum CSS retro dimuat. */
+  (function () {
+    var el = document.documentElement;
+    if (el.getAttribute("data-skin") === "retro") { el.removeAttribute("data-theme"); return; }
+    try {
+      el.setAttribute("data-theme", localStorage.getItem("theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+    } catch (e) {
+      el.setAttribute("data-theme", "light");
+    }
+  })();</script>
   <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <title>Tentang - Muhammad Zuhdi Yudadharma</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/tentang.css" />
+  <link rel="stylesheet" href="css/retro.css" />
 </head>
 <body id="top">
 

@@ -7,6 +7,8 @@
   <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@500;700&family=Space+Mono:wght@400;700&display=swap" />
+  <link rel="stylesheet" href="css/retro.css" />
   <style>
     :root {
       --blue: #2474e8;
@@ -53,7 +55,7 @@
     .edit-note { color: var(--muted); font-size: .82rem; text-align: right; }
     .style-list {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 12px;
       margin-top: 28px;
     }
@@ -82,6 +84,9 @@
     .style-card:nth-child(5) .mini { gap: 0; padding: 0; }
     .style-card:nth-child(5) .m-side { width: 40%; border-radius: 0; }
     .style-card:nth-child(5) .m-main { border: 0; border-radius: 0; }
+    .style-card:nth-child(6) .mini { gap: 6px; background: #fdfaf5; }
+    .style-card:nth-child(6) .m-main { border: 2px solid #0f0e17; border-radius: 0; background: #fffdf8; }
+    .style-card:nth-child(6) .m-box { border: 2px solid #0f0e17; border-radius: 0; background: #ffe234; }
     .style-name { display: block; margin: 11px 4px 2px; font-size: .9rem; font-weight: 800; }
     .style-desc { display: block; margin: 0 4px 3px; color: var(--muted); font-size: .72rem; }
 
@@ -216,7 +221,6 @@
 
     @media (max-width: 900px) {
       .style-list { grid-template-columns: repeat(3, 1fr); }
-      .style-card:nth-child(4), .style-card:nth-child(5) { display: none; }
       .mode-sidebar { grid-template-columns: 190px 1fr; }
       .mode-split { grid-template-columns: 280px 1fr; }
     }
@@ -269,7 +273,7 @@
       <div>
         <p class="eyebrow">Portfolio UI preview</p>
         <h1>Pilih gaya yang paling cocok.</h1>
-        <p class="chooser-intro">Klik salah satu pilihan di bawah untuk melihat tampilan portofolio secara langsung. Semua desain memakai warna biru muda dan putih.</p>
+        <p class="chooser-intro">Klik salah satu pilihan di bawah untuk melihat tampilan portofolio secara langsung. Lima gaya pertama bernuansa biru-putih, gaya 06 memakai palet kertas, tinta, dan kuning.</p>
       </div>
       <p class="edit-note">Demo satu file HTML<br />Data contoh bisa diganti nanti</p>
     </div>
@@ -279,6 +283,7 @@
       <button class="style-card" data-mode="bento"><span class="mini"><i class="m-main"></i><i class="m-box"></i><i class="m-box"></i><i class="m-box"></i><i class="m-box"></i></span><strong class="style-name">03 · Bento</strong><small class="style-desc">Kreatif & dinamis</small></button>
       <button class="style-card" data-mode="timeline"><span class="mini"><i class="m-main"></i><i class="m-line"></i><i class="m-main"></i></span><strong class="style-name">04 · Timeline</strong><small class="style-desc">Story & terstruktur</small></button>
       <button class="style-card" data-mode="split"><span class="mini"><i class="m-side"></i><i class="m-main"></i></span><strong class="style-name">05 · Split</strong><small class="style-desc">Elegan & minimal</small></button>
+      <button class="style-card" data-mode="retro"><span class="mini"><i class="m-main"></i><i class="m-box"></i></span><strong class="style-name">06 · Creative Retro</strong><small class="style-desc">Editorial & berkarakter</small></button>
     </div>
   </header>
 
@@ -310,20 +315,23 @@
       sidebar: () => `<div class="portfolio-inner mode-sidebar" id="top"><aside class="side"><a class="logo" href="#top">${data.logo}</a><div class="side-profile">${data.avatar}<div><h3>Muhammad Zuhdi Yudadharma</h3><p>Informatics Student</p></div></div><nav class="side-nav">${data.nav}<a href="#education">Experience</a><a href="#social">Social Media</a></nav><div class="side-social"><a href="#">in</a><a href="#">◎</a><a href="#">◈</a></div></aside><div class="main">${nav.replace('content-width', 'content-width')}<div class="content-width"><header class="hero"><div>${data.hero}</div><div class="avatar-wrap">${data.avatar}</div></header></div>${common()}</div></div>`,
       bento: () => `<div class="portfolio-inner mode-bento" id="top">${nav}<div class="content-width"><header class="hero"><div>${data.hero}</div><div class="avatar-wrap">${data.avatar}<span class="float-tag">Open to learn</span></div></header></div>${common()}</div>`,
       timeline: () => `<div class="portfolio-inner mode-timeline" id="top">${nav}<div class="content-width"><header class="hero"><div>${data.hero}</div><div class="avatar-wrap">${data.avatar}<span class="float-tag">Based in Malang</span></div></header></div>${common()}</div>`,
-      split: () => `<div class="portfolio-inner mode-split" id="top"><aside class="split-aside"><a class="logo" href="#top">${data.logo}</a>${data.avatar}<h2>Zuhdi<br />Yudadharma.</h2><p>Informatics student focused on creating useful, simple, and thoughtful digital experiences.</p><div class="social-row">${data.social}</div></aside><div class="split-main"><div class="content-width"><nav class="p-nav"><span class="eyebrow" style="margin:0">Portfolio / 2026</span><div class="nav-links">${data.nav}</div></nav><header class="hero"><div>${data.hero}</div><div class="avatar-wrap">${data.avatar}</div></header></div>${common()}</div></div>`
+      split: () => `<div class="portfolio-inner mode-split" id="top"><aside class="split-aside"><a class="logo" href="#top">${data.logo}</a>${data.avatar}<h2>Zuhdi<br />Yudadharma.</h2><p>Informatics student focused on creating useful, simple, and thoughtful digital experiences.</p><div class="social-row">${data.social}</div></aside><div class="split-main"><div class="content-width"><nav class="p-nav"><span class="eyebrow" style="margin:0">Portfolio / 2026</span><div class="nav-links">${data.nav}</div></nav><header class="hero"><div>${data.hero}</div><div class="avatar-wrap">${data.avatar}</div></header></div>${common()}</div></div>`,
+      retro: () => `<div class="portfolio-inner" data-skin="retro" id="top">${nav}<div class="content-width"><header class="hero"><div>${data.hero}</div><div class="avatar-wrap">${data.avatar}<span class="float-tag">Open for internship</span></div></header></div>${common()}</div>`
     };
 
-    const labels = { clean: 'Clean Professional', sidebar: 'Modern Sidebar', bento: 'Bento Grid', timeline: 'Timeline Story', split: 'Split Screen Elegant' };
+    const labels = { clean: 'Clean Professional', sidebar: 'Modern Sidebar', bento: 'Bento Grid', timeline: 'Timeline Story', split: 'Split Screen Elegant', retro: 'Creative Retro Zine' };
     const portfolio = document.getElementById('portfolio');
     const modeLabel = document.getElementById('mode-label');
     function choose(mode) {
+      if (!templates[mode]) mode = 'clean';
       portfolio.innerHTML = templates[mode]();
       modeLabel.textContent = labels[mode];
       document.querySelectorAll('.style-card').forEach(card => card.classList.toggle('active', card.dataset.mode === mode));
       portfolio.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
     document.querySelectorAll('.style-card').forEach(card => card.addEventListener('click', () => choose(card.dataset.mode)));
-    choose('clean');
+    window.addEventListener('hashchange', () => choose(location.hash.replace('#', '')));
+    choose(location.hash.replace('#', '') || 'clean');
   </script>
 </body>
 </html>
